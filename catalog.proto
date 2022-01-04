@@ -57,7 +57,7 @@ message ByIdReq {
 }
 
 message Catalog {
-  repeated Author Author = 1;
+  Author Author = 1;
   Book Book = 2;
   repeated Category Category = 3;
 }
