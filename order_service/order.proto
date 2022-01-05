@@ -8,7 +8,6 @@ service OrderService {
   rpc List(ListReq) returns (ListResp);
   rpc Update(Order) returns (Order);
   rpc Delete(ByIdReq) returns (EmptyResp);
-  rpc ListByTime(ListReq) returns (ListResp);
 }
 
 message EmptyResp {}
