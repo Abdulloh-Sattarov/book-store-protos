@@ -8,7 +8,7 @@ service CatalogService {
   rpc CreateBook(Book) returns (Book);
 
   rpc GetCategory(ByIdReq) returns (Category);
-  rpc GetAuthor(ByIdReq) returns (Catalog);
+  rpc GetAuthor(ByIdReq) returns (Author);
   rpc GetBook(ByIdReq) returns (Book);
 
   rpc List(ListReq) returns (ListResp);
@@ -66,7 +66,8 @@ message Category {
   string CategoryId = 1;
   string Name = 2;
   string ParentUuid = 3;
-  string CreatedAt = 4;
+  string ParentCategory = 4;
+  string CreatedAt = 5;
   string UpdatedAt = 6;
 }
 
@@ -82,6 +83,8 @@ message Book {
   string Name = 2;
   string AuthorId = 3;
   float Price = 4;
-  string CreatedAt = 5;
-  string UpdatedAt = 6;
+  string CategoryId = 5;
+  string CategoryName = 6;
+  string CreatedAt = 7;
+  string UpdatedAt = 8;
 }
