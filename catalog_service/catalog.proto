@@ -11,7 +11,7 @@ service CatalogService {
   rpc GetAuthor(ByIdReq) returns (Author);
   rpc GetBook(ByIdReq) returns (Book);
 
-  rpc List(ListReq) returns (ListResp);
+  rpc List(ListFilter) returns (ListResp);
   rpc ListCategory(ListReq) returns (ListRespCategory);
   rpc ListAuthor(ListReq) returns (ListRespAuthor);
   rpc ListBook(ListReq) returns (ListRespBook);
@@ -26,6 +26,12 @@ service CatalogService {
 }
 
 message EmptyResp {}
+
+message ListFilter {
+  int64 Page = 1;
+  int64 Limit = 2;
+  map<string, string> Filters = 3;
+}
 
 message ListReq {
   int64 Page = 1;

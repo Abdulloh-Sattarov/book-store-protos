@@ -8,10 +8,6 @@ service OrderService {
   rpc List(ListReq) returns (ListResp);
   rpc Update(Order) returns (Order);
   rpc Delete(ByIdReq) returns (EmptyResp);
-<<<<<<< HEAD
-  rpc ListByTime(ListReq) returns (ListResp);
-=======
->>>>>>> bc301617d0f4b27e9f46647152f4aad0dd255d4e
 }
 
 message EmptyResp {}
@@ -37,8 +33,4 @@ message ListReq {
 message ListResp {
   repeated Order Orders = 1;
   int64 Count = 2;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> bc301617d0f4b27e9f46647152f4aad0dd255d4e
