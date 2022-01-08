@@ -4,43 +4,35 @@ package catalog;
 
 service CatalogService {
   rpc CreateCategory(Category) returns (Category);
-  rpc CreateAuthor(Author) returns (Author);
-  rpc CreateBook(Book) returns (Book);
-
   rpc GetCategory(ByIdReq) returns (Category);
-  rpc GetAuthor(ByIdReq) returns (Author);
-  rpc GetBook(ByIdReq) returns (Book);
-
-  rpc List(ListFilter) returns (ListResp);
   rpc ListCategory(ListReq) returns (ListRespCategory);
-  rpc ListAuthor(ListReq) returns (ListRespAuthor);
-  rpc ListBook(ListReq) returns (ListRespBook);
-
   rpc UpdateCategory(Category) returns (Category);
-  rpc UpdateAuthor(Author) returns (Author);
-  rpc UpdateBook(Book) returns (Book);
-
   rpc DeleteCategory(ByIdReq) returns (EmptyResp);
+
+  rpc CreateAuthor(Author) returns (Author);
+  rpc GetAuthor(ByIdReq) returns (Author);
+  rpc ListAuthor(ListReq) returns (ListRespAuthor);
+  rpc UpdateAuthor(Author) returns (Author);
   rpc DeleteAuthor(ByIdReq) returns (EmptyResp);
+
+  rpc CreateBook(Book) returns (Book);
+  rpc GetBook(ByIdReq) returns (Book);
+  rpc ListBook(ListBookReq) returns (ListRespBook);
+  rpc UpdateBook(Book) returns (Book);
   rpc DeleteBook(ByIdReq) returns (EmptyResp);
 }
 
 message EmptyResp {}
-
-message ListFilter {
-  int64 Page = 1;
-  int64 Limit = 2;
-  map<string, string> Filters = 3;
-}
 
 message ListReq {
   int64 Page = 1;
   int64 Limit = 2;
 }
 
-message ListResp {
-  repeated Catalog Catalogs = 1;
-  int64 Count = 2;
+message ListBookReq {
+  int64 Page = 1;
+  int64 Limit = 2;
+  map<string, string> Filters = 3;
 }
 
 message ListRespCategory {
