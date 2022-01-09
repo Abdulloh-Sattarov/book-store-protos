@@ -81,7 +81,8 @@ message Book {
   string Name = 2;
   string AuthorId = 3;
   float Price = 4;
-  string CreatedAt = 5;
-  string UpdatedAt = 6;
-  repeated Category Categories = 7;
+  string CategoryId = 5;
+  string CreatedAt = 6;
+  string UpdatedAt = 8;
+  repeated Category Categories = 9;
 }
